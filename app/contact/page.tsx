@@ -22,20 +22,20 @@ const CONTACT_CARDS = [
   {
     icon: Phone,
     title: "Call Us",
-    line1: "+91 98765 43210",
+    line1: "+91 8858739294",
     line2: "Mon - Sat, 9AM - 6PM",
   },
   {
     icon: Mail,
     title: "Email Us",
-    line1: "info@omev.in",
-    line2: "support@omev.in",
+    line1: "omevmotor@gmail.com",
+    line2: "omevmotor@gmail.com",
   },
   {
     icon: MapPin,
     title: "Visit Us",
     line1: "OMEV Headquarters",
-    line2: "Pune, Maharashtra, India",
+    line2: "Lakhimpur, Uttar Pradesh",
   },
   {
     icon: Clock,
@@ -100,7 +100,7 @@ function Hero() {
     <section className="relative min-h-[70vh] flex items-end overflow-hidden bg-black">
       <div className="absolute inset-0">
         <Image
-          src="/images/contact-hero-scooter.jpg"
+          src="/images/contact-hero.png"
           alt="OMEV scooter in a dark showroom with glowing EV sign"
           fill
           priority
@@ -111,20 +111,20 @@ function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-32 w-full">
-        <p className="flex items-center gap-2 text-[#00D084] text-xs font-semibold tracking-widest uppercase mb-4">
-          <span className="h-px w-6 bg-[#00D084]" />
+        <p className="flex items-center gap-2 text-[#5fb129] text-xs font-semibold tracking-widest uppercase mb-4">
+          <span className="h-px w-6 bg-[#5fb129]" />
           Contact Us
         </p>
         <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight max-w-lg">
           Let&apos;s Build
           <br />
-          the <span className="text-[#00D084]">Future Together.</span>
+          the <span className="text-[#5fb129]">Future Together.</span>
         </h1>
         <p className="mt-5 max-w-sm text-sm text-gray-400 leading-relaxed">
           Have a question, need support, or want to become a partner?
           We&apos;re here to help.
         </p>
-        <button className="mt-8 inline-flex items-center gap-2 bg-[#00D084] hover:bg-[#00B874] text-black font-semibold px-6 py-3 rounded-full text-sm transition-colors">
+        <button className="mt-8 inline-flex items-center gap-2 bg-[#5fb129] hover:bg-[#5fb129]/80 text-black font-semibold px-6 py-3 rounded-full text-sm transition-colors">
           <Phone size={15} />
           Call Us Now
         </button>
@@ -145,10 +145,10 @@ function ContactInfoStrip() {
           {CONTACT_CARDS.map(({ icon: Icon, title, line1, line2 }) => (
             <div
               key={title}
-              className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md hover:border-[#00D084]/20 transition-all"
+              className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md hover:border-[#5fb129]/20 transition-all"
             >
               <div className="w-11 h-11 rounded-xl bg-black flex items-center justify-center mb-4">
-                <Icon size={18} className="text-[#00D084]" />
+                <Icon size={18} className="text-[#5fb129]" />
               </div>
               <h3 className="font-semibold text-sm text-black mb-1">{title}</h3>
               <p className="text-sm text-gray-700">{line1}</p>
@@ -171,8 +171,8 @@ function MessageAndMap() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           <div>
-            <p className="flex items-center gap-2 text-[#00D084] text-xs font-semibold tracking-widest uppercase mb-3">
-              <span className="h-px w-6 bg-[#00D084]" />
+            <p className="flex items-center gap-2 text-[#5fb129] text-xs font-semibold tracking-widest uppercase mb-3">
+              <span className="h-px w-6 bg-[#5fb129]" />
               Send Us a Message
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-8">
@@ -211,7 +211,7 @@ function MessageAndMap() {
               />
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 bg-[#00D084] hover:bg-[#00B874] text-black font-semibold px-6 py-3.5 rounded-full text-sm transition-colors"
+                className="inline-flex items-center gap-2 bg-[#5fb129] hover:bg-[#5fb129]/80 text-black font-semibold px-6 py-3.5 rounded-full text-sm transition-colors"
               >
                 Send Message
                 <ArrowRight size={15} />
@@ -229,7 +229,7 @@ function MessageAndMap() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
             <div className="absolute bottom-6 left-6">
               <span className="text-xl font-extrabold text-white">
-                OME<span className="text-[#00D084]">V</span>
+                OME<span className="text-[#5fb129]">V</span>
               </span>
             </div>
           </div>
@@ -242,39 +242,32 @@ function MessageAndMap() {
 /* ------------------------------------------------------------------ */
 /* Location map                                                       */
 /* ------------------------------------------------------------------ */
-
 function LocationMap() {
   return (
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl overflow-hidden border border-gray-100 aspect-[21/9]">
-          <Image
-            src="/images/contact-map.jpg"
-            alt="Map showing OMEV headquarters location in Pune"
-            fill
-            className="object-cover"
+          
+          {/* Google Maps */}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3523.7576089035065!2d80.7816715!3d27.9707087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399f356601acae93%3A0xdf7fd12863725a2f!2sOM%20EV%20MOTOR!5e0!3m2!1sen!2sin!4v1786535413870!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0 w-full h-full"
           />
-          <div className="absolute top-6 left-6 bg-black/90 backdrop-blur rounded-xl p-5 max-w-xs">
-            <h3 className="text-white font-semibold text-sm mb-1">
-              OMEV Headquarters
-            </h3>
-            <p className="text-gray-400 text-xs mb-3">
-              Pune, Maharashtra, India
-            </p>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-[#00D084] text-xs font-semibold"
-            >
-              View on Google Maps
-              <ArrowRight size={12} />
-            </a>
-          </div>
+
+          {/* Location Card */}
+       
+
         </div>
       </div>
     </section>
   );
 }
-
 /* ------------------------------------------------------------------ */
 /* Dealer CTA banner                                                   */
 /* ------------------------------------------------------------------ */
@@ -292,8 +285,8 @@ function DealerCta() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
           <div className="relative z-10 px-8 py-12 max-w-md">
-            <p className="flex items-center gap-2 text-[#00D084] text-xs font-semibold tracking-widest uppercase mb-3">
-              <span className="h-px w-6 bg-[#00D084]" />
+            <p className="flex items-center gap-2 text-[#5fb129] text-xs font-semibold tracking-widest uppercase mb-3">
+              <span className="h-px w-6 bg-[#5fb129]" />
               Become an OMEV Dealer
             </p>
             <h2 className="text-3xl font-bold text-white leading-tight mb-3">
@@ -305,7 +298,7 @@ function DealerCta() {
               Join India&apos;s fastest growing EV network and accelerate
               your success.
             </p>
-            <button className="inline-flex items-center gap-2 bg-[#00D084] hover:bg-[#00B874] text-black font-semibold px-6 py-3 rounded-full text-sm transition-colors">
+            <button className="inline-flex items-center gap-2 bg-[#5fb129] hover:bg-[#5fb129]/80 text-black font-semibold px-6 py-3 rounded-full text-sm transition-colors">
               Apply Now
               <ArrowRight size={15} />
             </button>

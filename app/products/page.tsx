@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ProductCarousel from "../components/ProductCarousel";
 
 const categories = [
   { name: "Electric Scooters", image: "scooter" },
@@ -31,10 +32,15 @@ const categories = [
 
 const featuredModels = [
   {
-    name: "S1 PRO",
+    name: "Nexo",
     tagline: "The perfect blend of performance, style and smart technology.",
-    price: "₹89,999",
-    image: "s1-pro",
+    images: [
+      "/images/nexo.png",
+      "/images/nexo-2.png",
+      "/images/nexo-3.png",
+      "/images/nexo-4.png",
+      "/images/nexo-5.png",
+    ],
     specs: [
       { icon: Gauge, label: "120 KM", sub: "Real Range" },
       { icon: Zap, label: "3.5 Hrs", sub: "Fast Charging" },
@@ -43,10 +49,16 @@ const featuredModels = [
     layout: "left",
   },
   {
-    name: "R1",
+    name: "Raizen",
     tagline: "Unleash power, performance and unmatched control.",
     price: "₹1,24,999",
-    image: "r1",
+    images: [
+      "/images/raizen.jpg",
+      "/images/raizen-2.jpg",
+      "/images/raizen-3.jpg",
+      "/images/raizen-4.jpg",
+      "/images/raizen-5.jpg",
+    ],
     specs: [
       { icon: Gauge, label: "120 KM", sub: "Real Range" },
       { icon: Zap, label: "90 km/h", sub: "Top Speed" },
@@ -56,34 +68,145 @@ const featuredModels = [
     layout: "right",
   },
   {
-    name: "S2 MAX",
+    name: "Orbit",
     tagline: "Go further. Ride smarter. Every single day.",
     price: "₹1,09,999",
-    image: "s2-max",
+    images: [
+      "/images/orbit.png",
+      "/images/orbit-2.png",
+      "/images/orbit-3.png",
+      "/images/orbit-4.png",
+      "/images/orbit-5.png",
+    ],
     specs: [
-      { icon: Gauge, label: "120 KM", sub: "Real Range" },
-      { icon: Zap, label: "90 km/h", sub: "Top Speed" },
+      { icon: Gauge, label: "140 KM", sub: "Real Range" },
+      { icon: Zap, label: "95 km/h", sub: "Top Speed" },
+      { icon: Battery, label: "4 Hrs", sub: "Fast Charging" },
+      { icon: Shield, label: "3 Years", sub: "Warranty" },
+    ],
+    layout: "left",
+  },
+  {
+    name: "Raizen Max",
+    tagline: "Compact, agile and built for the city.",
+    price: "₹74,999",
+    images: [
+      "/images/raizen-max.png",
+      "/images/raizen-max-2.png",
+      "/images/raizen-max-3.png",
+      "/images/raizen-max-4.png",
+      "/images/raizen-max-5.png",
+    ],
+    specs: [
+      { icon: Gauge, label: "100 KM", sub: "Real Range" },
+      { icon: Zap, label: "85 km/h", sub: "Top Speed" },
+      { icon: Battery, label: "3 Hrs", sub: "Fast Charging" },
+      { icon: Shield, label: "3 Years", sub: "Warranty" },
+    ],
+    layout: "right",
+  },
+  {
+    name: "Raizen Pro",
+    tagline: "Premium comfort with long-range performance.",
+    price: "₹1,34,999",
+    images: [
+      "/images/raizen-pro.png",
+      "/images/raizen-pro-2.png",
+      "/images/raizen-pro-3.png",
+      "/images/raizen-pro-4.png",
+      "/images/raizen-pro-5.png",
+    ],
+    specs: [
+      { icon: Gauge, label: "160 KM", sub: "Real Range" },
+      { icon: Zap, label: "100 km/h", sub: "Top Speed" },
+      { icon: Battery, label: "4 Hrs", sub: "Fast Charging" },
+      { icon: Shield, label: "5 Years", sub: "Warranty" },
+    ],
+    layout: "left",
+  },
+  {
+    name: "Storm",
+    tagline: "Maximum power for every journey.",
+    price: "₹1,49,999",
+    images: [
+      "/images/storm.png",
+      "/images/storm-2.png",
+      "/images/storm-3.png",
+      "/images/storm-4.png",
+      "/images/storm-5.png",
+    ],
+    specs: [
+      { icon: Gauge, label: "180 KM", sub: "Real Range" },
+      { icon: Zap, label: "105 km/h", sub: "Top Speed" },
+      { icon: Battery, label: "4.5 Hrs", sub: "Fast Charging" },
+      { icon: Shield, label: "5 Years", sub: "Warranty" },
+    ],
+    layout: "right",
+  },
+  {
+    name: "Thunder",
+    tagline: "Affordable electric mobility for everyone.",
+    price: "₹69,999",
+    images: [
+      "/images/thunder.png",
+      "/images/thunder-2.png",
+      "/images/thunder-3.png",
+      "/images/thunder-4.png",
+      "/images/thunder-5.png",
+    ],
+    specs: [
+      { icon: Gauge, label: "90 KM", sub: "Real Range" },
+      { icon: Zap, label: "70 km/h", sub: "Top Speed" },
       { icon: Battery, label: "3 Hrs", sub: "Fast Charging" },
       { icon: Shield, label: "3 Years", sub: "Warranty" },
     ],
     layout: "left",
   },
   {
-    name: "URBAN X",
-    tagline: "Compact, agile and built for the city.",
-    price: "₹74,999",
-    image: "urban-x",
+    name: "Zento",
+    tagline: "Luxury meets next-generation electric mobility.",
+    price: "₹1,59,999",
+    images: [
+      "/images/zento.png",
+      "/images/zento-2.png",
+      "/images/zento-3.png",
+      "/images/zento-4.png",
+      "/images/zento-5.png",
+    ],
     specs: [
-      { icon: Gauge, label: "140 KM", sub: "Real Range" },
-      { icon: Zap, label: "4 Hrs", sub: "Fast Charging" },
-      { icon: Shield, label: "3 Years", sub: "Warranty" },
+      { icon: Gauge, label: "200 KM", sub: "Real Range" },
+      { icon: Zap, label: "110 km/h", sub: "Top Speed" },
+      { icon: Battery, label: "5 Hrs", sub: "Fast Charging" },
+      { icon: Shield, label: "5 Years", sub: "Warranty" },
     ],
     layout: "right",
   },
+  {
+    name: "Zento Pro",
+    tagline: "Luxury meets next-generation electric mobility.",
+    price: "₹1,59,999",
+    images: [
+      "/images/zento-pro.png",
+      "/images/zento-pro-2.png",
+      "/images/zento-pro-3.png",
+      "/images/zento-pro-4.png",
+      "/images/zento-pro-5.png",
+    ],
+    specs: [
+      { icon: Gauge, label: "200 KM", sub: "Real Range" },
+      { icon: Zap, label: "110 km/h", sub: "Top Speed" },
+      { icon: Battery, label: "5 Hrs", sub: "Fast Charging" },
+      { icon: Shield, label: "5 Years", sub: "Warranty" },
+    ],
+    layout: "left",
+  },
 ];
 
-const compareData = {
-  headers: ["S1 Pro", "R1", "S2 Max", "Urban X"],
+const compareData: {
+  headers: string[];
+  rows: { label: string; values: string[]; highlight?: boolean }[];
+} = {
+  headers: ["Orbit", "Raizen", "Thunder", "Nexo"],
   rows: [
     { label: "Range", values: ["120 km", "120 km", "140 km", "100 km"] },
     { label: "Top Speed", values: ["90 km/h", "90 km/h", "95 km/h", "85 km/h"] },
@@ -91,7 +214,6 @@ const compareData = {
     { label: "Battery", values: ["3.1 kWh", "4.3 kWh", "3.7 kWh", "2.5 kWh"] },
     { label: "Motor Power", values: ["4.5 kW", "6.0 kW", "5.0 kW", "3.0 kW"] },
     { label: "Warranty", values: ["3 Years", "3 Years", "3 Years", "3 Years"] },
-    { label: "Price (Starting at)", values: ["₹89,999", "₹1,24,999", "₹1,09,999", "₹74,999"], highlight: true },
   ],
 };
 
@@ -121,29 +243,41 @@ export default function ProductsPage() {
   return (
     <div className="pt-16 lg:pt-20">
       <Navbar />
+
       {/* HERO SECTION */}
-      <section className="relative bg-black min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative bg-black min-h-[90vh] flex items-center overflow-hidden py-20 lg:py-0">
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#00D084]/10 rounded-full blur-[150px]" />
+          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-[#5fb129]/10 rounded-full blur-[100px] lg:blur-[150px]" />
+          <div className="absolute bottom-0 left-0 w-[250px] h-[250px] bg-[#5fb129]/5 rounded-full blur-[100px]" />
+          <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* Left Text */}
-            <div>
-              <p className="text-[#00D084] text-sm font-medium tracking-wider mb-4">OUR PRODUCTS</p>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-                ENGINEERED FOR<br />EVERY RIDE.
+            <div className="text-center lg:text-left">
+  
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 text-center lg:text-left">
+                <span className="block">ENGINEERED</span>
+                <span className="block text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1">
+                  FOR
+                </span>
+                <span className="block bg-gradient-to-r from-[#5fb129] to-[#8fd657] bg-clip-text text-transparent">
+                  EVERY RIDE.
+                </span>
               </h1>
-              <p className="text-gray-400 text-lg mb-8 max-w-md leading-relaxed">
+
+              <p className="text-gray-400 text-base sm:text-lg mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
                 From daily commutes to long journeys, discover electric vehicles built for performance, comfort and intelligence.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="bg-[#00D084] hover:bg-[#00B874] text-black font-semibold px-6 py-3 rounded-md text-sm flex items-center gap-2 transition-colors">
+
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
+                <button className="bg-[#5fb129] hover:bg-[#8fd657] text-black font-semibold px-6 py-3 rounded-md text-sm flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
                   EXPLORE MODELS
                   <ChevronRight size={16} />
                 </button>
-                <button className="border border-white/30 hover:border-white text-white px-6 py-3 rounded-md text-sm transition-colors">
+                <button className="border border-white/30 hover:border-white text-white px-6 py-3 rounded-md text-sm transition-colors w-full sm:w-auto">
                   COMPARE MODELS
                 </button>
               </div>
@@ -152,35 +286,39 @@ export default function ProductsPage() {
             {/* Right Image + Floating Stats */}
             <div className="relative hidden lg:block">
               <div className="relative w-full aspect-[4/3]">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center border border-white/10">
-                  <span className="text-gray-600 text-sm">Scooter Hero Image</span>
+                <div className="absolute inset-0 bg-white rounded-2xl flex items-center justify-center border border-white/10 shadow-2xl shadow-[#5fb129]/5">
+                  <Image
+                    src="/images/orbit.png"
+                    alt="Scooter Hero Image"
+                    fill
+                    className="object-contain p-8"
+                  />
                 </div>
               </div>
 
-              {/* Floating Stat Cards */}
-              <div className="absolute top-8 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3">
-                <Gauge size={18} className="text-[#00D084]" />
+              <div className="absolute top-8 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+                <Gauge size={18} className="text-[#5fb129]" />
                 <div>
                   <p className="text-white text-sm font-bold">120 km</p>
                   <p className="text-gray-500 text-xs">Real Range</p>
                 </div>
               </div>
-              <div className="absolute top-28 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3">
-                <Zap size={18} className="text-[#00D084]" />
+              <div className="absolute top-28 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+                <Zap size={18} className="text-[#5fb129]" />
                 <div>
                   <p className="text-white text-sm font-bold">90 km/h</p>
                   <p className="text-gray-500 text-xs">Top Speed</p>
                 </div>
               </div>
-              <div className="absolute top-48 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3">
-                <Battery size={18} className="text-[#00D084]" />
+              <div className="absolute top-48 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+                <Battery size={18} className="text-[#5fb129]" />
                 <div>
                   <p className="text-white text-sm font-bold">3.5 Hrs</p>
                   <p className="text-gray-500 text-xs">Fast Charging</p>
                 </div>
               </div>
-              <div className="absolute top-68 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3">
-                <Shield size={18} className="text-[#00D084]" />
+              <div className="absolute top-[17rem] -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+                <Shield size={18} className="text-[#5fb129]" />
                 <div>
                   <p className="text-white text-sm font-bold">3 Years</p>
                   <p className="text-gray-500 text-xs">Warranty</p>
@@ -191,62 +329,42 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* CHOOSE YOUR RIDE */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-500 text-sm tracking-widest uppercase mb-12">Choose Your Ride</p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((cat) => (
-              <div key={cat.name} className="group cursor-pointer">
-                <div className="bg-gray-100 rounded-2xl aspect-square mb-4 flex items-center justify-center border border-gray-200 group-hover:border-[#00D084]/30 transition-colors">
-                  <span className="text-gray-400 text-xs">{cat.name}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <h3 className="font-semibold text-sm">{cat.name}</h3>
-                  <span className="text-[#00D084] text-xs font-medium flex items-center gap-1">
-                    Explore <ArrowRight size={12} />
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FEATURED MODELS */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-14 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#00D084] text-sm font-medium tracking-wider uppercase mb-3">Featured Models</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-16">OUR LINEUP</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl text-center font-bold text-black mb-10 lg:mb-16">
+            Featured Models
+          </h2>
 
-          <div className="space-y-20">
+          <div className="space-y-14 lg:space-y-20">
             {featuredModels.map((model) => (
               <div key={model.name}>
-                <div className={`grid lg:grid-cols-2 gap-12 items-center ${model.layout === "right" ? "lg:flex-row-reverse" : ""}`}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   {/* Text Side */}
                   <div className={model.layout === "right" ? "lg:order-2" : ""}>
-                    <p className="text-gray-500 text-xs font-medium mb-2">OMEV</p>
-                    <h3 className="text-4xl md:text-5xl font-bold text-black mb-4">{model.name}</h3>
+                    <p className="text-[#5fb129] text-xl font-semibold mb-2">OMEV</p>
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">{model.name}</h3>
                     <p className="text-gray-600 mb-4">{model.tagline}</p>
-                    <p className="text-2xl font-bold text-black mb-6">{model.price}*</p>
                     <button className="bg-black hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-md text-sm transition-colors mb-8">
                       EXPLORE MODEL
                     </button>
                   </div>
 
-                  {/* Image Side */}
-                  <div className={model.layout === "right" ? "lg:order-1" : ""}>
-                    <div className="bg-white rounded-3xl aspect-[4/3] flex items-center justify-center border border-gray-200">
-                      <span className="text-gray-400">{model.name} Image</span>
-                    </div>
+                  {/* Image Side — auto-scrolling carousel */}
+                  <div className="relative bg-white rounded-3xl aspect-[4/3] border border-gray-200 overflow-hidden">
+                    <ProductCarousel images={model.images} alt={model.name} />
                   </div>
                 </div>
 
                 {/* Specs Row */}
-                <div className={`mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 ${model.layout === "right" ? "lg:pr-[50%]" : "lg:pl-[50%]"}`}>
+                <div
+                  className={`mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 ${
+                    model.layout === "right" ? "lg:pr-[50%]" : "lg:pl-[50%]"
+                  }`}
+                >
                   {model.specs.map((spec) => (
                     <div key={spec.label} className="flex items-center gap-3 bg-white rounded-xl p-4 border border-gray-100">
-                      <spec.icon size={20} className="text-[#00D084]" />
+                      <spec.icon size={20} className="text-[#5fb129] shrink-0" />
                       <div>
                         <p className="font-bold text-sm text-black">{spec.label}</p>
                         <p className="text-xs text-gray-500">{spec.sub}</p>
@@ -261,19 +379,19 @@ export default function ProductsPage() {
       </section>
 
       {/* COMPARE TABLE */}
-      <section className="py-20 bg-black">
+      <section className="py-14 sm:py-16 lg:py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#00D084] text-sm font-medium tracking-wider uppercase mb-3">Compare</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">YOUR PERFECT RIDE</h2>
+          <p className="text-[#5fb129] text-sm font-medium tracking-wider uppercase mb-3">Compare</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-10 lg:mb-12">YOUR PERFECT RIDE</h2>
 
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[800px]">
+          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+            <table className="w-full min-w-[700px]">
               <thead>
                 <tr className="border-b border-white/10">
                   <th className="text-left py-4 px-4 text-gray-500 font-medium text-sm"></th>
                   {compareData.headers.map((h) => (
                     <th key={h} className="py-4 px-4 text-center">
-                      <div className="w-16 h-16 bg-gray-800 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-800 rounded-xl mx-auto mb-2 flex items-center justify-center">
                         <span className="text-gray-600 text-xs">{h}</span>
                       </div>
                       <span className="text-white text-sm font-semibold">{h}</span>
@@ -284,11 +402,11 @@ export default function ProductsPage() {
               <tbody>
                 {compareData.rows.map((row) => (
                   <tr key={row.label} className="border-b border-white/5 hover:bg-white/[0.02]">
-                    <td className="py-4 px-4 text-gray-400 text-sm">{row.label}</td>
+                    <td className="py-4 px-4 text-gray-400 text-sm whitespace-nowrap">{row.label}</td>
                     {row.values.map((val, i) => (
                       <td
                         key={i}
-                        className={`py-4 px-4 text-center text-sm ${row.highlight ? "text-[#00D084] font-semibold" : "text-gray-300"}`}
+                        className={`py-4 px-4 text-center text-sm ${row.highlight ? "text-[#5fb129] font-semibold" : "text-gray-300"}`}
                       >
                         {val}
                       </td>
@@ -302,16 +420,18 @@ export default function ProductsPage() {
       </section>
 
       {/* WHY CHOOSE OMEV */}
-      <section className="py-20 bg-black">
+      <section className="py-14 sm:py-16 lg:py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#00D084] text-sm font-medium tracking-wider uppercase mb-3 text-center">Features</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-16 text-center">WHY CHOOSE OMEV</h2>
+          <p className="text-[#5fb129] text-sm font-medium tracking-wider uppercase mb-3 text-center">Features</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-10 lg:mb-16 text-center">
+            WHY CHOOSE OMEV
+          </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyChoose.map((item) => (
               <div key={item.title} className="bg-[#111] border border-white/5 rounded-2xl p-6">
-                <div className="w-12 h-12 bg-[#00D084]/10 rounded-full flex items-center justify-center mb-4">
-                  <item.icon size={24} className="text-[#00D084]" />
+                <div className="w-12 h-12 bg-[#5fb129]/10 rounded-full flex items-center justify-center mb-4">
+                  <item.icon size={24} className="text-[#5fb129]" />
                 </div>
                 <h3 className="text-white font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
@@ -322,24 +442,24 @@ export default function ProductsPage() {
       </section>
 
       {/* BUILT ON TRUST */}
-      <section className="py-20 bg-black relative overflow-hidden">
+      <section className="py-14 sm:py-16 lg:py-20 bg-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
-              <p className="text-[#00D084] text-sm font-medium tracking-wider uppercase mb-3">Trust</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
+              <p className="text-[#5fb129] text-sm font-medium tracking-wider uppercase mb-3">Trust</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-10 lg:mb-12">
                 BUILT ON TRUST.<br />
                 <span className="text-gray-600">LOVED BY THOUSANDS.</span>
               </h2>
 
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-2 gap-6 sm:gap-8">
                 {stats.map((stat) => (
                   <div key={stat.label} className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-[#00D084]/10 rounded-lg flex items-center justify-center">
-                      <stat.icon size={20} className="text-[#00D084]" />
+                    <div className="w-10 h-10 bg-[#5fb129]/10 rounded-lg flex items-center justify-center shrink-0">
+                      <stat.icon size={20} className="text-[#5fb129]" />
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-white">{stat.value}</p>
+                      <p className="text-xl sm:text-2xl font-bold text-white">{stat.value}</p>
                       <p className="text-sm text-gray-500">{stat.label}</p>
                     </div>
                   </div>
@@ -348,44 +468,29 @@ export default function ProductsPage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/3] bg-gray-800 rounded-2xl flex items-center justify-center border border-white/10">
-                <span className="text-gray-600">Riders on Road Image</span>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-gray-900">
+                <Image
+                  src="/images/rider-on-road.png"
+                  alt="OMEV riders on the road"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ACCESSORIES */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#00D084] text-sm font-medium tracking-wider uppercase mb-3 text-center">Extras</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-16 text-center">ACCESSORIES</h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {accessories.map((item, idx) => (
-              <div key={item.name} className="text-center group cursor-pointer">
-                <div className="relative bg-gray-100 rounded-2xl aspect-square mb-4 flex items-center justify-center border border-gray-200">
-                  <span className="text-gray-400 text-xs">{item.name}</span>
-                  <span className="absolute top-3 left-3 w-6 h-6 bg-black text-white text-xs font-bold rounded-full flex items-center justify-center">
-                    {idx + 1}
-                  </span>
-                </div>
-                <h3 className="font-semibold text-sm text-black">{item.name}</h3>
-                <p className="text-[#00D084] font-semibold text-sm">{item.price}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* EASY FINANCE & WARRANTY */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-14 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#00D084] text-sm font-medium tracking-wider uppercase mb-3 text-center">Peace of Mind</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-16 text-center">EASY FINANCE & WARRANTY</h2>
+          <p className="text-[#5fb129] text-sm font-medium tracking-wider uppercase mb-3 text-center">Peace of Mind</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-10 lg:mb-16 text-center">
+            EASY FINANCE & WARRANTY
+          </h2>
 
-          <div className="grid lg:grid-cols-3 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8 items-center">
             {/* Left Column */}
             <div className="space-y-6">
               {[
@@ -395,7 +500,7 @@ export default function ProductsPage() {
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center border border-gray-200 flex-shrink-0">
-                    <item.icon size={20} className="text-[#00D084]" />
+                    <item.icon size={20} className="text-[#5fb129]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-sm text-black mb-1">{item.title}</h3>
@@ -406,8 +511,8 @@ export default function ProductsPage() {
             </div>
 
             {/* Center Badge */}
-            <div className="flex justify-center">
-              <div className="relative w-56 h-56">
+            <div className="flex justify-center order-first lg:order-none">
+              <div className="relative w-44 h-44 sm:w-56 sm:h-56">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#00D084]/20 to-transparent rounded-full border-2 border-[#00D084]/30 flex items-center justify-center">
                   <div className="text-center">
                     <Shield size={40} className="text-[#00D084] mx-auto mb-2" />
@@ -443,31 +548,38 @@ export default function ProductsPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-20 bg-black relative overflow-hidden">
+      <section className="py-14 sm:py-16 lg:py-20 bg-black relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#00D084] rounded-full blur-[150px]" />
+          <div className="absolute bottom-0 right-0 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] bg-[#00D084] rounded-full blur-[100px] sm:blur-[150px]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-[#111] border border-white/5 rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="max-w-xl">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="bg-[#111] border border-white/5 rounded-3xl p-6 sm:p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+            <div className="max-w-xl text-center lg:text-left">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
                 READY TO FIND YOUR PERFECT RIDE?
               </h2>
               <p className="text-gray-400 mb-8">
                 Book a test ride today and experience the future of mobility.
               </p>
-              <button className="bg-[#00D084] hover:bg-[#00B874] text-black font-semibold px-8 py-4 rounded-md transition-colors">
+              <button className="bg-[#5fb129] hover:bg-[#5fb129]/80 text-black font-semibold px-8 py-4 rounded-md transition-colors w-full sm:w-auto">
                 BOOK A TEST RIDE
               </button>
             </div>
             <div className="w-full lg:w-1/2">
-              <div className="aspect-[16/9] bg-gray-800 rounded-2xl flex items-center justify-center border border-white/10">
-                <span className="text-gray-600">CTA Scooter Image</span>
+              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 bg-gray-900">
+                <Image
+                  src="/images/cta.png"
+                  alt="OMEV Electric Scooter"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <Footer />
     </div>
   );

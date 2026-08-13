@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
+import Image from "next/image";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
@@ -22,12 +22,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[#00D084] rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-sm">O</span>
-            </div>
-            <span className="text-xl font-bold tracking-tight">OMEV</span>
-          </Link>
+         <Link href="/" className="flex items-center">
+  <Image
+    src="/images/omev-logo-dark.png"
+    alt="OMEV"
+    width={140}
+    height={55}
+    className="h-18 w-auto object-contain"
+    priority
+  />
+</Link>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-14">
@@ -35,7 +39,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-md text-gray-300 hover:text-[#00D084] transition-colors duration-200"
+                className="text-md text-gray-300 hover:text-[#5fb129] transition-colors duration-200"
               >
                 {link.name}
               </Link>
@@ -44,9 +48,14 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:block">
-            <button className="bg-[#00D084] hover:bg-[#00B874] text-black font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-200">
-              BOOK A TEST RIDE
-            </button>
+            <a
+  href="https://wa.me/918858739294?text=Hi%20OMEV,%20I%20would%20like%20to%20book%20a%20test%20ride."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-[#5fb129] hover:bg-[#5fb129] text-black font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-200"
+>
+  BOOK A TEST RIDE
+</a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,14 +77,19 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-gray-300 hover:text-[#00D084] py-2 transition-colors"
+                className="block text-gray-300 hover:text-[#5fb129] py-2 transition-colors"
               >
                 {link.name}
               </Link>
             ))}
-            <button className="w-full bg-[#00D084] text-black font-semibold px-5 py-3 rounded-full text-sm mt-4">
-              BOOK A TEST RIDE
-            </button>
+            <a
+  href="https://wa.me/918858739294?text=Hi%20OMEV,%20I%20would%20like%20to%20book%20a%20test%20ride."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-[#5fb129] hover:bg-[#5fb129] text-black font-semibold px-5 py-3 rounded-full text-sm mt-4"
+>
+  BOOK A TEST RIDE
+</a>
           </div>
         </div>
       )}
