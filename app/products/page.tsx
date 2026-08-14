@@ -53,7 +53,7 @@ const featuredModels = [
     tagline: "Unleash power, performance and unmatched control.",
     price: "₹1,24,999",
     images: [
-      "/images/raizen.jpg",
+      "/images/raizen.png",
       "/images/raizen-2.jpg",
       "/images/raizen-3.jpg",
       "/images/raizen-4.jpg",
@@ -260,7 +260,7 @@ export default function ProductsPage() {
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 text-center lg:text-left">
                 <span className="block">ENGINEERED</span>
-                <span className="block text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1">
+                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1">
                   FOR
                 </span>
                 <span className="block bg-gradient-to-r from-[#5fb129] to-[#8fd657] bg-clip-text text-transparent">
