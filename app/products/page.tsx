@@ -245,84 +245,123 @@ export default function ProductsPage() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative bg-black min-h-[90vh] flex items-center overflow-hidden py-20 lg:py-0">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-[#5fb129]/10 rounded-full blur-[100px] lg:blur-[150px]" />
-          <div className="absolute bottom-0 left-0 w-[250px] h-[250px] bg-[#5fb129]/5 rounded-full blur-[100px]" />
-          <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
+    <section className="relative bg-black min-h-[90vh] flex items-center overflow-hidden py-16 lg:py-0">
+  <div className="absolute inset-0">
+    <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-[#5fb129]/10 rounded-full blur-[100px] lg:blur-[150px]" />
+    <div className="absolute bottom-0 left-0 w-[250px] h-[250px] bg-[#5fb129]/5 rounded-full blur-[100px]" />
+    <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
+  </div>
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-10 lg:py-20">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+
+      {/* Left Text */}
+      <div className="text-center lg:text-left">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[0.95] mb-6">
+          <span className="block">ENGINEERED</span>
+          <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-[0.15em] my-1">
+            FOR
+          </span>
+          <span className="block bg-gradient-to-r from-[#5fb129] to-[#8fd657] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(95,177,41,0.3)]">
+            EVERY RIDE.
+          </span>
+        </h1>
+
+        <p className="text-gray-400 text-base sm:text-lg mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
+          From daily commutes to long journeys, discover electric vehicles built for performance, comfort and intelligence.
+        </p>
+
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
+         
+        </div>
+      </div>
+
+      {/* Right: image + stats — visible on every screen size now */}
+      <div className="relative w-full">
+
+        {/* ===== MOBILE / TABLET ===== */}
+        <div className="lg:hidden mt-2">
+          <div className="relative w-full max-w-md mx-auto aspect-[4/3] sm:aspect-[16/11] rounded-2xl p-[1px] bg-gradient-to-br from-[#5fb129]/40 via-white/10 to-transparent">
+            <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden shadow-2xl shadow-[#5fb129]/5">
+              <Image
+                src="/images/orbit.png"
+                alt="Scooter Hero Image"
+                fill
+                priority
+                className="object-contain p-6 sm:p-8"
+              />
+            </div>
+          </div>
+
+          <div className="w-2/3 max-w-md mx-auto h-6 -mt-3 bg-[#5fb129]/20 rounded-full blur-xl" />
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-md mx-auto mt-6">
+            {[
+              { icon: Gauge, label: "120 km", sub: "Real Range" },
+              { icon: Zap, label: "90 km/h", sub: "Top Speed" },
+              { icon: Battery, label: "3.5 Hrs", sub: "Fast Charging" },
+              { icon: Shield, label: "3 Years", sub: "Warranty" },
+            ].map((stat) => (
+              <div
+                key={stat.sub}
+                className="bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-2.5 shadow-lg"
+              >
+                <stat.icon size={16} className="text-[#5fb129] shrink-0" />
+                <div>
+                  <p className="text-white text-xs font-bold leading-tight">{stat.label}</p>
+                  <p className="text-gray-500 text-[10px] leading-tight">{stat.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-            {/* Left Text */}
-            <div className="text-center lg:text-left">
-  
-
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 text-center lg:text-left">
-                <span className="block">ENGINEERED</span>
-                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1">
-                  FOR
-                </span>
-                <span className="block bg-gradient-to-r from-[#5fb129] to-[#8fd657] bg-clip-text text-transparent">
-                  EVERY RIDE.
-                </span>
-              </h1>
-
-              <p className="text-gray-400 text-base sm:text-lg mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
-                From daily commutes to long journeys, discover electric vehicles built for performance, comfort and intelligence.
-              </p>
-
-              <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
-                
-          
-              </div>
+        {/* ===== DESKTOP — original floating-card layout ===== */}
+        <div className="relative hidden lg:block">
+          <div className="relative w-full aspect-[4/3]">
+            <div className="absolute inset-0 bg-white rounded-2xl flex items-center justify-center border border-white/10 shadow-2xl shadow-[#5fb129]/5">
+              <Image
+                src="/images/orbit.png"
+                alt="Scooter Hero Image"
+                fill
+                className="object-contain p-8"
+              />
             </div>
+          </div>
 
-            {/* Right Image + Floating Stats */}
-            <div className="relative hidden lg:block">
-              <div className="relative w-full aspect-[4/3]">
-                <div className="absolute inset-0 bg-white rounded-2xl flex items-center justify-center border border-white/10 shadow-2xl shadow-[#5fb129]/5">
-                  <Image
-                    src="/images/orbit.png"
-                    alt="Scooter Hero Image"
-                    fill
-                    className="object-contain p-8"
-                  />
-                </div>
-              </div>
-
-              <div className="absolute top-8 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
-                <Gauge size={18} className="text-[#5fb129]" />
-                <div>
-                  <p className="text-white text-sm font-bold">120 km</p>
-                  <p className="text-gray-500 text-xs">Real Range</p>
-                </div>
-              </div>
-              <div className="absolute top-28 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
-                <Zap size={18} className="text-[#5fb129]" />
-                <div>
-                  <p className="text-white text-sm font-bold">90 km/h</p>
-                  <p className="text-gray-500 text-xs">Top Speed</p>
-                </div>
-              </div>
-              <div className="absolute top-48 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
-                <Battery size={18} className="text-[#5fb129]" />
-                <div>
-                  <p className="text-white text-sm font-bold">3.5 Hrs</p>
-                  <p className="text-gray-500 text-xs">Fast Charging</p>
-                </div>
-              </div>
-              <div className="absolute top-[17rem] -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
-                <Shield size={18} className="text-[#5fb129]" />
-                <div>
-                  <p className="text-white text-sm font-bold">3 Years</p>
-                  <p className="text-gray-500 text-xs">Warranty</p>
-                </div>
-              </div>
+          <div className="absolute top-8 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+            <Gauge size={18} className="text-[#5fb129]" />
+            <div>
+              <p className="text-white text-sm font-bold">120 km</p>
+              <p className="text-gray-500 text-xs">Real Range</p>
+            </div>
+          </div>
+          <div className="absolute top-28 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+            <Zap size={18} className="text-[#5fb129]" />
+            <div>
+              <p className="text-white text-sm font-bold">90 km/h</p>
+              <p className="text-gray-500 text-xs">Top Speed</p>
+            </div>
+          </div>
+          <div className="absolute top-48 -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+            <Battery size={18} className="text-[#5fb129]" />
+            <div>
+              <p className="text-white text-sm font-bold">3.5 Hrs</p>
+              <p className="text-gray-500 text-xs">Fast Charging</p>
+            </div>
+          </div>
+          <div className="absolute top-[17rem] -right-4 bg-[#111] border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-lg">
+            <Shield size={18} className="text-[#5fb129]" />
+            <div>
+              <p className="text-white text-sm font-bold">3 Years</p>
+              <p className="text-gray-500 text-xs">Warranty</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* FEATURED MODELS */}
       <section className="py-14 sm:py-16 lg:py-20 bg-gray-50">
