@@ -36,10 +36,10 @@ const featuredModels = [
     tagline: "The perfect blend of performance, style and smart technology.",
     images: [
       "/images/nexo.png",
-      "/images/nexo-2.png",
-      "/images/nexo-3.png",
-      "/images/nexo-4.png",
-      "/images/nexo-5.png",
+      "/images/nexo2.png",
+      "/images/nexo3.png",
+      "/images/nexo4.png",
+      "/images/nexo5.png",
     ],
     specs: [
       { icon: Gauge, label: "120 KM", sub: "Real Range" },
@@ -54,10 +54,10 @@ const featuredModels = [
     price: "₹1,24,999",
     images: [
       "/images/raizen.png",
-      "/images/raizen-2.jpg",
-      "/images/raizen-3.jpg",
-      "/images/raizen-4.jpg",
-      "/images/raizen-5.jpg",
+      "/images/raizen-2.png",
+      "/images/raizen-3.png",
+      "/images/raizen-4.png",
+      "/images/raizen-5.png",
     ],
     specs: [
       { icon: Gauge, label: "120 KM", sub: "Real Range" },
@@ -168,10 +168,10 @@ const featuredModels = [
     price: "₹1,59,999",
     images: [
       "/images/zento.png",
-      "/images/zento-2.png",
-      "/images/zento-3.png",
-      "/images/zento-4.png",
-      "/images/zento-5.png",
+      "/images/zento2.png",
+      "/images/zento3.png",
+      "/images/zento4.png",
+      "/images/zento5.png",
     ],
     specs: [
       { icon: Gauge, label: "200 KM", sub: "Real Range" },
@@ -273,13 +273,8 @@ export default function ProductsPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
-                <button className="bg-[#5fb129] hover:bg-[#8fd657] text-black font-semibold px-6 py-3 rounded-md text-sm flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
-                  EXPLORE MODELS
-                  <ChevronRight size={16} />
-                </button>
-                <button className="border border-white/30 hover:border-white text-white px-6 py-3 rounded-md text-sm transition-colors w-full sm:w-auto">
-                  COMPARE MODELS
-                </button>
+                
+          
               </div>
             </div>
 

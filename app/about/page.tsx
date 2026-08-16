@@ -88,19 +88,19 @@ const LEADERSHIP = [
     name: "Akash Shrivastava",
     role: "Founder",
     bio: "Visionary leader with 15+ years of experience in automotive and technology.",
-    image: "/images/leader-akash.jpg",
+    image: "/images/akash.png",
   },
   {
     name: "Dharmendra Singh",
     role: "Partner",
     bio: "Engineering expert focused on product and sustainability.",
-    image: "/images/leader-dharmendra.jpg",
+    image: "/images/dharmendra.png",
   },
   {
     name: "Atal Rathore",
     role: "Partner",
     bio: "Operations specialist ensuring efficiency, quality and customer satisfaction.",
-    image: "/images/leader-atal.jpg",
+    image: "/images/atal.png",
   },
 ];
 
@@ -604,33 +604,34 @@ function Leadership() {
         <div className="grid sm:grid-cols-3 gap-6">
           {LEADERSHIP.map((person) => (
             <div
-              key={person.name}
-              className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm flex items-center gap-4"
-            >
-              <div className="relative h-16 w-16 shrink-0 rounded-full overflow-hidden bg-gray-100">
-                <Image
-                  src={person.image}
-                  alt={person.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <h3 className="font-semibold text-sm text-black">
-                  {person.name}
-                </h3>
-                <p className="text-xs text-[#5fb129] font-medium mb-1">
-                  {person.role}
-                </p>
-                <a
-                  href="#"
-                  aria-label={`${person.name} on LinkedIn`}
-                  className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-100 text-gray-600 hover:bg-[#5fb129]/10 hover:text-[#5fb129] transition-colors"
-                >
-                  <FaLinkedin size={12} />
-                </a>
-              </div>
-            </div>
+  key={person.name}
+  className="group rounded-2xl border border-gray-100 bg-white p-5 shadow-sm 
+             flex items-center gap-4 transition-all duration-300
+             hover:-translate-y-1 hover:shadow-lg hover:border-[#5fb129]/20"
+>
+  <div className="relative h-16 w-16 shrink-0 rounded-full overflow-hidden 
+                  bg-[#f3f8ef] ring-2 ring-[#5fb129]/20">
+    <Image
+      src={person.image}
+      alt={person.name}
+      fill
+      className="object-cover transition-transform duration-300 
+                 group-hover:scale-105"
+    />
+  </div>
+
+  <div className="min-w-0">
+    <h3 className="font-semibold text-sm text-black truncate">
+      {person.name}
+    </h3>
+
+    <p className="text-xs text-[#5fb129] font-medium mb-2">
+      {person.role}
+    </p>
+
+   
+  </div>
+</div>
           ))}
         </div>
       </div>

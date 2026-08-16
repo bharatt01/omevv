@@ -55,24 +55,14 @@ const FAQS = [
 ];
 
 const SUPPORT_LINKS = [
-  {
-    icon: ShieldCheck,
-    title: "Warranty Support",
-    desc: "Comprehensive warranty and hassle-free claims process.",
-    cta: "Learn More",
-  },
+
   {
     icon: BookOpen,
     title: "Download Manual",
     desc: "Access user manual and documents anytime, anywhere.",
     cta: "Download",
   },
-  {
-    icon: Headphones,
-    title: "Roadside Assistance",
-    desc: "24/7 support for a safe and worry-free riding experience.",
-    cta: "Contact Now",
-  },
+  
 ];
 
 export default function ContactPage() {
@@ -221,7 +211,7 @@ function MessageAndMap() {
 
           <div className="relative rounded-2xl overflow-hidden min-h-[320px] lg:min-h-0">
             <Image
-              src="/images/contact-office.jpg"
+              src="/images/contact-office.png"
               alt="OMEV office meeting room"
               fill
               className="object-cover"
@@ -278,7 +268,7 @@ function DealerCta() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl overflow-hidden min-h-[280px] flex items-center">
           <Image
-            src="/images/contact-dealership.jpg"
+            src="/images/contact-dealership.png"
             alt="OMEV dealership storefront at night"
             fill
             className="object-cover"
