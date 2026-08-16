@@ -374,45 +374,90 @@ export default function ProductsPage() {
       </section>
 
       {/* COMPARE TABLE */}
-      <section className="py-14 sm:py-16 lg:py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#5fb129] text-sm font-medium tracking-wider uppercase mb-3">Compare</p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-10 lg:mb-12">YOUR PERFECT RIDE</h2>
+     <section className="py-14 sm:py-16 lg:py-20 bg-black">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p className="text-[#5fb129] text-sm font-medium tracking-wider uppercase mb-3">Compare</p>
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 lg:mb-3">YOUR PERFECT RIDE</h2>
+    <p className="text-gray-500 text-sm mb-8 lg:hidden">Swipe to compare models →</p>
 
-          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
-            <table className="w-full min-w-[700px]">
-              <thead>
-                <tr className="border-b border-white/10">
-                  <th className="text-left py-4 px-4 text-gray-500 font-medium text-sm"></th>
-                  {compareData.headers.map((h) => (
-                    <th key={h} className="py-4 px-4 text-center">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-800 rounded-xl mx-auto mb-2 flex items-center justify-center">
-                        <span className="text-gray-600 text-xs">{h}</span>
-                      </div>
-                      <span className="text-white text-sm font-semibold">{h}</span>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {compareData.rows.map((row) => (
-                  <tr key={row.label} className="border-b border-white/5 hover:bg-white/[0.02]">
-                    <td className="py-4 px-4 text-gray-400 text-sm whitespace-nowrap">{row.label}</td>
-                    {row.values.map((val, i) => (
-                      <td
-                        key={i}
-                        className={`py-4 px-4 text-center text-sm ${row.highlight ? "text-[#5fb129] font-semibold" : "text-gray-300"}`}
-                      >
-                        {val}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+    {/* ===== MOBILE / TABLET — one card per model ===== */}
+    <div className="lg:hidden -mx-4 px-4">
+      <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-white/5 [&::-webkit-scrollbar-thumb]:bg-[#5fb129]/40 [&::-webkit-scrollbar-thumb]:rounded-full">
+        {compareData.headers.map((h) => (
+          <div
+            key={h}
+            className="shrink-0 w-[78%] sm:w-[46%] snap-start bg-[#111] border border-white/10 rounded-2xl p-5"
+          >
+            <div className="flex items-center gap-3 mb-5 pb-5 border-b border-white/10">
+              <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center shrink-0">
+                <span className="text-gray-600 text-[10px] text-center leading-tight px-1">{h}</span>
+              </div>
+              <span className="text-white text-lg font-bold">{h}</span>
+            </div>
+
+            <dl className="space-y-3.5">
+              {compareData.rows.map((row, i) => (
+                <div key={row.label} className="flex items-center justify-between gap-3">
+                  <dt className="text-gray-500 text-sm">{row.label}</dt>
+                  <dd
+                    className={`text-sm font-semibold text-right ${
+                      row.highlight ? "text-[#5fb129]" : "text-gray-200"
+                    }`}
+                  >
+                    {row.values[compareData.headers.indexOf(h)]}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+      {/* scroll progress dots */}
+      <div className="flex justify-center gap-1.5 mt-2">
+        {compareData.headers.map((h) => (
+          <span key={h} className="w-1.5 h-1.5 rounded-full bg-white/20" />
+        ))}
+      </div>
+    </div>
+
+    {/* ===== DESKTOP — original table ===== */}
+    <div className="hidden lg:block overflow-x-auto">
+      <table className="w-full min-w-[700px]">
+        <thead>
+          <tr className="border-b border-white/10">
+            <th className="text-left py-4 px-4 text-gray-500 font-medium text-sm"></th>
+            {compareData.headers.map((h) => (
+              <th key={h} className="py-4 px-4 text-center">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-800 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                  <span className="text-gray-600 text-xs">{h}</span>
+                </div>
+                <span className="text-white text-sm font-semibold">{h}</span>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {compareData.rows.map((row) => (
+            <tr key={row.label} className="border-b border-white/5 hover:bg-white/[0.02]">
+              <td className="py-4 px-4 text-gray-400 text-sm whitespace-nowrap">{row.label}</td>
+              {row.values.map((val, i) => (
+                <td
+                  key={i}
+                  className={`py-4 px-4 text-center text-sm ${
+                    row.highlight ? "text-[#5fb129] font-semibold" : "text-gray-300"
+                  }`}
+                >
+                  {val}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
       {/* WHY CHOOSE OMEV */}
       <section className="py-14 sm:py-16 lg:py-20 bg-black">
@@ -556,9 +601,14 @@ export default function ProductsPage() {
               <p className="text-gray-400 mb-8">
                 Book a test ride today and experience the future of mobility.
               </p>
-              <button className="bg-[#5fb129] hover:bg-[#5fb129]/80 text-black font-semibold px-8 py-4 rounded-md transition-colors w-full sm:w-auto">
-                BOOK A TEST RIDE
-              </button>
+            <a
+  href="https://wa.me/918858739294?text=Hi%20OMEV,%20I%20would%20like%20to%20book%20a%20test%20ride."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-[#5fb129] hover:bg-[#5fb129] text-black font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-200"
+>
+  BOOK A TEST RIDE
+</a>
             </div>
             <div className="w-full lg:w-1/2">
               <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 bg-gray-900">
